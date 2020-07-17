@@ -70,12 +70,5 @@ function   docxsender()
 
 var promise = new Promise(function(resolve, reject) {
     docxcreator();
-    // Open a log file
-    
-    if(fs.existsSync('./testing.docx')){
-      docxsender();
-    }
-    else {
-      reject(Error("It broke"));
-    }
   });
+promise.then(docxsender);
